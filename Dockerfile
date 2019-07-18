@@ -36,6 +36,7 @@ WORKDIR /tmp
 #     fix-permissions /home/$NB_USER
 
 RUN conda install -y -c conda-forge rise && \
+    jupyter notebook --generate-config && \
     fix-permissions /home/$NB_USER
 
 RUN pip install RISE && \
