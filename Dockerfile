@@ -9,6 +9,7 @@ ARG NB_GID="100"
 
 ADD fix-permissions /usr/local/bin/fix-permissions
 
+RUN pip install --upgrade pip
 RUN pip install geopandas overpass
 
 WORKDIR /tmp
