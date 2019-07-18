@@ -35,11 +35,11 @@ RUN pip install -U pip && pip install geopandas overpass && \
 # RUN python setup.py install && \
 #     fix-permissions /home/$NB_USER
 
-# RUN conda install -y -c conda-forge rise && \
-#     fix-permissions /home/$NB_USER
-
-RUN pip install RISE && \
+RUN conda install -y -c conda-forge rise && \
     fix-permissions /home/$NB_USER
+
+# RUN pip install RISE && \
+#     fix-permissions /home/$NB_USER
 
 # RUN pip install jupyter_contrib_nbextensions && \
 #     fix-permissions /home/$NB_USER
