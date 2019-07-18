@@ -18,7 +18,7 @@ RUN wget https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz && \
 
 WORKDIR /tmp/basemap-1.1.0
 
-RUN python setup.py install && fix-permissions /home/$NB_USER
+RUN python setup.py install
 
 RUN conda install -y -c conda-forge rise && fix-permissions /home/$NB_USER
 RUN pip install RISE && fix-permissions /home/$NB_USER
