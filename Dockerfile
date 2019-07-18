@@ -26,7 +26,7 @@ RUN pip install RISE
 RUN pip install jupyter_contrib_nbextensions
 
 RUN pip install https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
-RUN jupyter contrib nbextension install
+RUN jupyter contrib nbextension install usermode -g
 
 RUN pip install jupyter_nbextensions_configurator
-RUN jupyter nbextensions_configurator enable
+RUN jupyter nbextensions_configurator enable usermode -g
