@@ -22,18 +22,18 @@ RUN pip install geopandas overpass && \
 
 WORKDIR /tmp
 
-RUN wget https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz && \
-    tar xvfz v1.1.0.tar.gz && \
-    cd /tmp/basemap-1.1.0/geos-3.3.3 && \
-    ./configure --prefix=$GEOS_DIR && \
-    make && \
-    make install && \
-    fix-permissions /home/$NB_USER
+# RUN wget https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz && \
+#     tar xvfz v1.1.0.tar.gz && \
+#     cd /tmp/basemap-1.1.0/geos-3.3.3 && \
+#     ./configure --prefix=$GEOS_DIR && \
+#     make && \
+#     make install && \
+#     fix-permissions /home/$NB_USER
 
-WORKDIR /tmp/basemap-1.1.0
+# WORKDIR /tmp/basemap-1.1.0
 
-RUN python setup.py install && \
-    fix-permissions /home/$NB_USER
+# RUN python setup.py install && \
+#     fix-permissions /home/$NB_USER
 
 RUN conda install -y -c conda-forge rise && \
     fix-permissions /home/$NB_USER
