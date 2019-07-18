@@ -20,13 +20,13 @@ WORKDIR /tmp/basemap-1.1.0
 
 RUN python setup.py install
 
-RUN conda install -c conda-forge rise
+RUN conda install -y -c conda-forge rise
 RUN pip install RISE
 
 RUN pip install jupyter_contrib_nbextensions
 
 RUN pip install https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
-RUN jupyter contrib nbextension install --user
+RUN jupyter contrib nbextension install -g
 
 RUN pip install jupyter_nbextensions_configurator
-RUN jupyter nbextensions_configurator enable --user
+RUN jupyter nbextensions_configurator enable -g
