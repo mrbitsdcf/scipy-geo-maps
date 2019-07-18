@@ -1,7 +1,7 @@
 FROM unidata/python:latest
 LABEL "Maintainer"="MrBiTs"
 LABEL "e-mail"="mrbits.dcf@gmail.com"
-LABEL "version"="0.0.1"
+LABEL "version"="0.0.2"
 
 RUN pip install geopandas overpass
 
@@ -20,3 +20,13 @@ WORKDIR /tmp/basemap-1.1.0
 
 RUN python setup.py install
 
+RUN conda install -c conda-forge rise
+RUN pip install RISE
+
+RUN pip install jupyter_contrib_nbextensions
+
+RUN pip install https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
+RUN jupyter contrib nbextension install --user
+​
+RUN pip install jupyter_nbextensions_configurator
+RUN jupyter nbextensions_configurator enable --user
