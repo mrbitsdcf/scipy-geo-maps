@@ -35,24 +35,23 @@ WORKDIR /tmp
 # RUN python setup.py install && \
 #     fix-permissions /home/$NB_USER
 
-RUN conda install -y -c conda-forge rise && \
-    jupyter notebook --generate-config && \
+# RUN conda install -y -c conda-forge rise && \
+#     fix-permissions /home/$NB_USER
+
+# RUN pip install RISE && \
+#     fix-permissions /home/$NB_USER
+
+RUN pip install jupyter_contrib_nbextensions && \
     fix-permissions /home/$NB_USER
 
-RUN pip install RISE && \
+RUN pip install https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master && \
     fix-permissions /home/$NB_USER
 
-# RUN pip install jupyter_contrib_nbextensions && \
-#     fix-permissions /home/$NB_USER
+RUN jupyter contrib nbextension install --user && \
+    fix-permissions /home/$NB_USER
 
-# RUN pip install https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master && \
-#     fix-permissions /home/$NB_USER
+RUN pip install jupyter_nbextensions_configurator && \
+    fix-permissions /home/$NB_USER
 
-# RUN jupyter contrib nbextension install --user && \
-#     fix-permissions /home/$NB_USER
-
-# RUN pip install jupyter_nbextensions_configurator && \
-#     fix-permissions /home/$NB_USER
-
-# RUN jupyter nbextensions_configurator enable --user && \
-#     fix-permissions /home/$NB_USER
+RUN jupyter nbextensions_configurator enable --user && \
+    fix-permissions /home/$NB_USER
