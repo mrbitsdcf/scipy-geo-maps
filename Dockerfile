@@ -9,6 +9,8 @@ ARG NB_GID="100"
 ARG GEOS_DIR="/home/jovyan/geos-3.3.3"
 ARG CONDA_DIR="/opt/conda"
 
+USER root
+
 ADD fix-permissions /usr/local/bin/fix-permissions
 
 RUN fix-permissions /home/$NB_USER
