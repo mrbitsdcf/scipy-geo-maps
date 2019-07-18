@@ -3,6 +3,12 @@ LABEL "Maintainer"="MrBiTs"
 LABEL "e-mail"="mrbits.dcf@gmail.com"
 LABEL "version"="0.0.2"
 
+ARG NB_USER="jovyan"
+ARG NB_UID="1000"
+ARG NB_GID="100"
+
+ADD fix-permissions /usr/local/bin/fix-permissions
+
 RUN pip install geopandas overpass
 
 WORKDIR /tmp
