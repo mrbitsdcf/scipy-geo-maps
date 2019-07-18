@@ -18,15 +18,15 @@ RUN wget https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz && \
 
 WORKDIR /tmp/basemap-1.1.0
 
-RUN python setup.py install
+RUN python setup.py install && fix-permissions /home/$NB_USER
 
-RUN conda install -y -c conda-forge rise
-RUN pip install RISE
+RUN conda install -y -c conda-forge rise && fix-permissions /home/$NB_USER
+RUN pip install RISE && fix-permissions /home/$NB_USER
 
-RUN pip install jupyter_contrib_nbextensions
+RUN pip install jupyter_contrib_nbextensions && fix-permissions /home/$NB_USER
 
-RUN pip install https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
-RUN jupyter contrib nbextension install --user
+RUN pip install https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master && fix-permissions /home/$NB_USER
+RUN jupyter contrib nbextension install --user && fix-permissions /home/$NB_USER
 
-RUN pip install jupyter_nbextensions_configurator
-RUN jupyter nbextensions_configurator enable --user
+RUN pip install jupyter_nbextensions_configurator && fix-permissions /home/$NB_USER
+RUN jupyter nbextensions_configurator enable --user && fix-permissions /home/$NB_USER
