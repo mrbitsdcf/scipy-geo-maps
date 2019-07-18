@@ -20,7 +20,7 @@ USER $NB_UID
 RUN pip install -U pip && pip install geopandas overpass && \
     fix-permissions /home/$NB_USER
 
-WORKDIR /tmp
+# WORKDIR /tmp
 
 # RUN wget https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz && \
 #     tar xvfz v1.1.0.tar.gz && \
@@ -38,20 +38,20 @@ WORKDIR /tmp
 # RUN conda install -y -c conda-forge rise && \
 #     fix-permissions /home/$NB_USER
 
-# RUN pip install RISE && \
+RUN pip install RISE && \
+    fix-permissions /home/$NB_USER
+
+# RUN pip install jupyter_contrib_nbextensions && \
 #     fix-permissions /home/$NB_USER
 
-RUN pip install jupyter_contrib_nbextensions && \
-    fix-permissions /home/$NB_USER
+# RUN pip install https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master && \
+#     fix-permissions /home/$NB_USER
 
-RUN pip install https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master && \
-    fix-permissions /home/$NB_USER
+# RUN jupyter contrib nbextension install --user && \
+#     fix-permissions /home/$NB_USER
 
-RUN jupyter contrib nbextension install --user && \
-    fix-permissions /home/$NB_USER
+# RUN pip install jupyter_nbextensions_configurator && \
+#     fix-permissions /home/$NB_USER
 
-RUN pip install jupyter_nbextensions_configurator && \
-    fix-permissions /home/$NB_USER
-
-RUN jupyter nbextensions_configurator enable --user && \
-    fix-permissions /home/$NB_USER
+# RUN jupyter nbextensions_configurator enable --user && \
+#     fix-permissions /home/$NB_USER
