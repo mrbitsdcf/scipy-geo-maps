@@ -13,8 +13,6 @@ USER root
 
 ADD fix-permissions /usr/local/bin/fix-permissions
 
-ADD docker-entrypoint.sh /docker-entrypoint.sh
-
 RUN fix-permissions /home/$NB_USER
 
 USER $NB_UID
