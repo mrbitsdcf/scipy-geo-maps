@@ -19,6 +19,8 @@ By default, run a container based on this image will raise a Jupyter Notebook wi
 How to run
 ----------
 
+Due to permissions, run docker with a non-root user will cause errors in run.sh. Please use your root account.
+
 Pull image with ```docker pull mrbits/scipy-geo-maps:latest```
 
 Run with:
