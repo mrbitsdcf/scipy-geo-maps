@@ -1,10 +1,12 @@
 #!/bin/bash
 
-docker container rm -f scypi-geo-maps 1>/dev/null 2>&1
+docker container rm -f scipy-geo-maps 1>/dev/null 2>&1
 
-docker run --name scypi-geo-maps -d --restart=always \
+docker run --name scipy-geo-maps -d --restart=always \
   -p 80:8888 \
   -v /docker/jovyan:/home/jovyan \
-  mrbits/scypi-geo-maps:lastest
+  mrbits/scipy-geo-maps:latest
 
-docker logs scypi-geo-maps
+sleep 10
+
+docker logs scipy-geo-maps

@@ -13,6 +13,8 @@ USER root
 
 ADD fix-permissions /usr/local/bin/fix-permissions
 
+ADD docker-entrypoint.sh /docker-entrypoint.sh
+
 RUN fix-permissions /home/$NB_USER
 
 USER $NB_UID
@@ -53,3 +55,5 @@ RUN jupyter nbextensions_configurator enable --user && \
 RUN rm -rf /tmp/v1.1.0.tar.gz && rm -rf /tmp/basemap-1.1.0
 
 WORKDIR /home/$NB_USER
+
+ENTRYPOINT /docker-entrypoint.sh
