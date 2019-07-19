@@ -49,3 +49,7 @@ RUN pip install jupyter_nbextensions_configurator && \
 
 RUN jupyter nbextensions_configurator enable --user && \
     fix-permissions /home/$NB_USER
+
+RUN rm -rf /tmp/*
+
+WORKDIR /home/$NB_USER
