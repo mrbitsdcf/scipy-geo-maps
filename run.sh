@@ -2,7 +2,7 @@
 
 docker container rm -f scipy-geo-maps 1>/dev/null 2>&1
 
-mkdir /docker/jovyan
+mkdir -p /docker/jovyan
 
 chown -R 1000:1000 /docker/jovyan
 
