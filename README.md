@@ -1,7 +1,7 @@
 MrBiTs SciPy Geo and Maps
 =========================
 
-Docker image for Data Science with Python, with emphasis in maps and geodata.
+Docker image for Data Science with Python, with emphasis in maps, geodata and astronomical calculations.
 
 This image is based on Unidata-Python and Jupyter-Notebook Docker images.
 
@@ -15,11 +15,16 @@ By default, run a container based on this image will raise a Jupyter Notebook wi
 - Geopandas
 - Terminals
 - Jupyter-nbextensions
+- PyEphem (Python 3 only)
+- Astropy (Python 3 only)
+- Pylunar (Python 3 only)
 
 How to run
 ----------
 
 Due to permissions, run docker with a non-root user will cause errors in run.sh. Please use your root account.
+
+Visit DockerHub at [https://hub.docker.com/r/mrbits/scipy-geo-maps]
 
 Pull image with ```docker pull mrbits/scipy-geo-maps:latest```
 

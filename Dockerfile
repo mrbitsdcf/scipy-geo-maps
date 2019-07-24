@@ -17,7 +17,7 @@ RUN fix-permissions /home/$NB_USER
 
 USER $NB_UID
 
-RUN pip install -U pip && pip install geopandas overpass && \
+RUN pip install -U pip && pip install geopandas overpass pytz ephem pylunar astropy && \
     fix-permissions /home/$NB_USER
 
 WORKDIR /tmp
