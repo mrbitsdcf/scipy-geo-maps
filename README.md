@@ -18,6 +18,7 @@ By default, run a container based on this image will raise a Jupyter Notebook wi
 - PyEphem (Python 3 only)
 - Astropy (Python 3 only)
 - Pylunar (Python 3 only)
+- SeaBorn (https://seaborn.pydata.org/)
 
 How to run
 ----------
