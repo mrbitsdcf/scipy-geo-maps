@@ -50,6 +50,9 @@ RUN pip install jupyter_nbextensions_configurator && \
 RUN jupyter nbextensions_configurator enable --user && \
     fix-permissions /home/$NB_USER
 
+RUN pip install RISE
+    fix-permissions /home/$NB_USER
+    
 RUN rm -rf /tmp/v1.1.0.tar.gz && rm -rf /tmp/basemap-1.1.0
 
 WORKDIR /home/$NB_USER
